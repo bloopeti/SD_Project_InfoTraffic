@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="5dp"
-    tools:context=".uicontrollers.LoginActivity">
+    tools:context=".uicontrollers.CreateAccountActivity">
 
     <EditText
-        android:id="@+id/email_field_login"
+        android:id="@+id/email_field_createacc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -18,7 +19,16 @@
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/pass_field_login"
+        android:id="@+id/pass_field_createacc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:ems="10"
+        android:hint="@string/prompt_password"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/pass_repeat_field_createacc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -27,15 +37,17 @@
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/finalize_button_login"
+        android:id="@+id/finalize_button_createacc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:text="@string/action_sign_in" />
+        android:text="@string/action_create_acc" />
 
     <Button
-        android:id="@+id/createacc_button_login"
+        android:id="@+id/back_button_createacc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/action_create_acc" />
+        android:layout_margin="5dp"
+        android:text="@string/action_back" />
+
 </LinearLayout>

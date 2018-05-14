@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:orientation="vertical"
+    android:padding="5dp"
+    tools:context=".uicontrollers.AlertDetailsActivity">
+
+    <EditText
+        android:id="@+id/type_field_alert_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:ems="10"
+        android:inputType="none"
+        android:hint="@string/prompt_alert_type"/>
+
+    <EditText
+        android:id="@+id/location_field_alert_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:ems="10"
+        android:inputType="none"
+        android:hint="@string/prompt_alert_location"/>
+
+    <EditText
+        android:id="@+id/time_field_alert_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:ems="10"
+        android:inputType="none"
+        android:hint="@string/prompt_alert_time"/>
+
+    <EditText
+        android:id="@+id/submitter_field_alert_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:ems="10"
+        android:inputType="none"
+        android:hint="@string/prompt_alert_submitter"/>
+
+    <EditText
+        android:id="@+id/likes_field_alert_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:ems="10"
+        android:inputType="none"
+        android:hint="@string/prompt_alert_likes"/>
+
+    <Button
+        android:id="@+id/like_button_alert_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/action_like" />
+
+    <Button
+        android:id="@+id/back_button_alert_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/action_back" />
+
+</LinearLayout>

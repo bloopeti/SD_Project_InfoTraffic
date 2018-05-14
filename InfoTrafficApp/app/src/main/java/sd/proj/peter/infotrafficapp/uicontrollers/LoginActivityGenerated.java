@@ -66,7 +66,7 @@ public class LoginActivityGenerated extends AppCompatActivity implements LoaderC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_loginGenerated);
+        setContentView(R.layout.activity_login_generated);
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
