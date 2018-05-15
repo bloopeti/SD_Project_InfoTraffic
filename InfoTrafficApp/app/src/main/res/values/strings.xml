@@ -2,6 +2,9 @@
     <string name="app_name">InfoTraffic App</string>
 
     <string name="action_back">"Back"</string>
+
+    <string name="label_todo">TODO</string>
+    <string name="label_temp_view">TEMPORARY VIEW - TODO</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -18,6 +21,9 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."</string>
 
+    <string name="label_login_screen">Login</string>
+    <string name="label_create_acc_screen">Create account</string>
+
     <!-- Strings related to alerts -->
     <string name="prompt_alert_type">"Alert type"</string>
     <string name="prompt_alert_location">"Alert location"</string>
@@ -26,5 +32,18 @@
     <string name="prompt_alert_likes">"Alert likes"</string>
 
     <string name="action_like">Like</string>
+    <string name="action_add_alert">Add alert</string>
+
+    <string name="label_add_alert">Add alert</string>
+    <string name="label_alert_details">Alert details</string>
+    <string name="label_alert_list">Alert list</string>
+
+    <string-array name="alert_types_array">
+        <item>Police</item>
+        <item>Hidden Police</item>
+        <item>Roadworks</item>
+        <item>Accident</item>
+        <item>Pothole</item>
+    </string-array>
 
 </resources>

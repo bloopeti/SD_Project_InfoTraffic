@@ -9,7 +9,14 @@
     android:padding="5dp"
     tools:context=".uicontrollers.AlertDetailsActivity">
 
-    <EditText
+    <TextView
+        android:id="@+id/title_field_alert_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/label_alert_details"
+        android:textSize="25sp" />
+    <TextView
         android:id="@+id/type_field_alert_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,7 +25,7 @@
         android:inputType="none"
         android:hint="@string/prompt_alert_type"/>
 
-    <EditText
+    <TextView
         android:id="@+id/location_field_alert_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,7 +34,7 @@
         android:inputType="none"
         android:hint="@string/prompt_alert_location"/>
 
-    <EditText
+    <TextView
         android:id="@+id/time_field_alert_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,7 +43,7 @@
         android:inputType="none"
         android:hint="@string/prompt_alert_time"/>
 
-    <EditText
+    <TextView
         android:id="@+id/submitter_field_alert_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,7 +52,7 @@
         android:inputType="none"
         android:hint="@string/prompt_alert_submitter"/>
 
-    <EditText
+    <TextView
         android:id="@+id/likes_field_alert_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
