@@ -33,6 +33,7 @@
 
     <string name="action_like">Like</string>
     <string name="action_add_alert">Add alert</string>
+    <string name="action_refresh_alert_list">Refresh list</string>
 
     <string name="label_add_alert">Add alert</string>
     <string name="label_alert_details">Alert details</string>
