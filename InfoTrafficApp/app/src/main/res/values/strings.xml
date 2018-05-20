@@ -6,6 +6,8 @@
     <string name="label_todo">TODO</string>
     <string name="label_temp_view">TEMPORARY VIEW - TODO</string>
     <!-- Strings related to login -->
+    <string name="toast_login">Logging in...</string>
+
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="prompt_repeat_password">Repeat password</string>
@@ -14,8 +16,10 @@
     <string name="action_sign_in">Sign in</string>
 
     <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_email_required">An email address is required</string>
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_password_required">A password is required</string>
     <string name="error_field_required">This field is required</string>
 
     <string name="permission_rationale">"Contacts permissions are needed for providing email
@@ -24,7 +28,15 @@
     <string name="label_login_screen">Login</string>
     <string name="label_create_acc_screen">Create account</string>
 
+    <!-- Strings related to acc creation -->
+    <string name="toast_acc_created">Account created</string>
+
+    <string name="error_pass_mismatch">Passwords don\'t match</string>
+
     <!-- Strings related to alerts -->
+    <string name="toast_alert_created">Alert created</string>
+
+    <string name="prompt_choose_type">Choose alert type</string>
     <string name="prompt_alert_type">"Alert type"</string>
     <string name="prompt_alert_location">"Alert location"</string>
     <string name="prompt_alert_time">"Alert time"</string>

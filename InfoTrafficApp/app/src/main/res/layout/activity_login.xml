@@ -45,5 +45,6 @@
         android:id="@+id/createacc_button_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:text="@string/action_create_acc" />
 </LinearLayout>

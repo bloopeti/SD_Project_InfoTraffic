@@ -16,19 +16,20 @@
         android:layout_margin="5dp"
         android:text="@string/label_alert_list"
         android:textSize="25sp" />
-    <Button
-        android:id="@+id/add_button_alert_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="@string/label_todo" />
 
     <Button
         android:id="@+id/refresh_button_alert_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:text="@string/label_todo" />
+        android:text="@string/action_refresh_alert_list" />
+
+    <Button
+        android:id="@+id/add_button_alert_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/label_add_alert" />
 
     <ListView
         android:id="@+id/list_alert_list"
