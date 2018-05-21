@@ -6,32 +6,33 @@
     android:padding="5dp" >
 
     <RelativeLayout
+        android:id="@+id/alert_list_row"
         android:layout_width="match_parent"
-        android:layout_height=""
-        />
-    
-    <TextView
-        android:id="@+id/firstLine"
-        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/secondLine"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignWithParentIfMissing="true"
-        android:gravity="center_vertical"
-        android:text="Example alert"
-        android:textSize="16sp" />
+        android:padding="5dp">
 
-    <TextView
-        android:id="@+id/secondLine"
-        android:layout_width="fill_parent"
-        android:layout_height="26dip"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:singleLine="true"
-        android:hint="Example location"
-        android:textSize="12sp" />
+        <TextView
+            android:id="@+id/first_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignWithParentIfMissing="true"
+            android:text="Example alert"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
+        <TextView
+            android:id="@+id/second_line"
+            android:layout_width="match_parent"
+            android:layout_height="26dip"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:singleLine="true"
+            android:hint="Example location"
+            android:textColor="@color/dark_grey"
+            android:textSize="12sp" />
+    </RelativeLayout>
 </RelativeLayout>
