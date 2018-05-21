@@ -29,8 +29,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         // Set up
 
-        //client = Client.getInstance();
-
         EmailFieldLogin = (EditText) findViewById(R.id.email_field_login);
         PassFieldLogin = (EditText) findViewById(R.id.pass_field_login);
 
@@ -49,6 +47,11 @@ public class LoginActivity extends AppCompatActivity {
                 goToCreateAcc();
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     private void attemptLogin()
