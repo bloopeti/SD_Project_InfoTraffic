@@ -7,7 +7,8 @@ import sd.proj.peter.infotrafficapp.common.commands.Command;
 import sd.proj.peter.infotrafficapp.common.commands.CommandFactory;
 
 public class ClientToServerConnection extends Thread {
-    private ObjectInputStream inputStream;
+    private static ObjectInputStream inputStream;
+    private String receivedData;
 
     public ClientToServerConnection(ObjectInputStream inputStream) {
         this.inputStream = inputStream;
@@ -20,12 +21,18 @@ public class ClientToServerConnection extends Thread {
                 System.out.println("Received: " + received);
                 String[] args = received.split("\n");
 
+                receivedData = received;
+
                 //TODO: process input
                 Command command = CommandFactory.getCommand(args);
-                System.out.println(command.execute().toString());
+                //System.out.println(command.execute().toString());
             }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    public String getReceivedData() {
+        return receivedData;
     }
 }

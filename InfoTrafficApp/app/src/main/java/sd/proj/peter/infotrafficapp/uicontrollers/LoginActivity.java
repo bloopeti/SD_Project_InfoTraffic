@@ -10,7 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.IOException;
+
 import sd.proj.peter.infotrafficapp.R;
+import sd.proj.peter.infotrafficapp.client.Client;
 import sd.proj.peter.infotrafficapp.common.commands.serialization.SerializeCommand;
 import sd.proj.peter.infotrafficapp.common.model.User;
 
@@ -18,12 +21,16 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText EmailFieldLogin;
     private EditText PassFieldLogin;
+    private Client client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // Set up
+
+        //client = Client.getInstance();
+
         EmailFieldLogin = (EditText) findViewById(R.id.email_field_login);
         PassFieldLogin = (EditText) findViewById(R.id.pass_field_login);
 
@@ -76,6 +83,22 @@ public class LoginActivity extends AppCompatActivity {
             focusView = EmailFieldLogin;
             cancel = true;
         }
+        User currentUser = new User(email, email, password);
+        if (!cancel){
+            String msg = new SerializeCommand(currentUser).execute();
+
+            msg = "login\n" + msg;
+
+
+
+            //TODO get response
+            //if (ok)
+            //  start next activity
+            //else {
+            //  EmailFieldLogin.setError("Wrong email and/or password!")
+            //  focusView = EmailFieldLogin;
+            //  cancel = true;
+        }
 
         if (cancel) {
             // There was an error; don't attempt login and focus the first
@@ -84,8 +107,6 @@ public class LoginActivity extends AppCompatActivity {
         } else {
             // attempt login
             // send email & pass to server, request ok/ not ok +reason
-            User currentUser = new User(email, email, password);
-            System.out.println(new SerializeCommand(currentUser).execute());
 
             Toast.makeText(LoginActivity.this, getString(R.string.toast_login),
                     Toast.LENGTH_SHORT).show();

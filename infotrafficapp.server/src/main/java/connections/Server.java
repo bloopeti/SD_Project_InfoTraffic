@@ -10,6 +10,7 @@ public class Server extends Thread {
     public static final int port = 6666;
     private List<ServerToClientConnection> connections;
     private static Server instance;
+    private boolean running = false;
 
     private Server() {
         super();
@@ -24,12 +25,13 @@ public class Server extends Thread {
     }
 
     public void run() {
+        running = true;
         int connectedClients = 0;
-        System.out.println("Starting server at port " + port);
         ServerSocket serverSocket = null;
         try {
+            System.out.println("Starting server at port " + port);
             serverSocket = new ServerSocket(port);
-            while (true) {
+            while (running) {
                 Socket client = serverSocket.accept();
                 System.out.println("New client: " + client.toString());
                 ServerToClientConnection newConnection = new ServerToClientConnection(client, ++connectedClients);
