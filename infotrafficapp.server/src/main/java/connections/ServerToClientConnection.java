@@ -1,12 +1,16 @@
 package connections;
 
-import common.commands.Command;
-import common.commands.CommandFactory;
+import common.commands.Command;;
+import common.commands.serialization.SerializeCommand;
+import common.model.Alert;
+import common.model.AlertList;
+import dao.daos.AlertDAO;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.List;
 
 public class ServerToClientConnection extends Thread {
 
@@ -26,14 +30,25 @@ public class ServerToClientConnection extends Thread {
         try {
             outputStream = new ObjectOutputStream(socket.getOutputStream());
             inputStream = new ObjectInputStream(socket.getInputStream());
+
+            List<Alert> alerts = AlertDAO.findAllActive();
+
+            AlertList alertList = new AlertList(alerts);
+            Command command1 = new SerializeCommand(alertList);
+            String sending = ((SerializeCommand) command1).execute();
+            System.out.println(sending);
+            outputStream.writeObject(sending);
+
+            String received = (String) inputStream.readObject();
+            System.out.println("Requested: " + received);
+/*
             while (true) {
                 String received = (String) inputStream.readObject();
                 System.out.println("Requested: " + received);
 
                 String[] args = received.split("\n");
                 Command command = CommandFactory.getCommand(args);
-
-            }
+            }*/
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }

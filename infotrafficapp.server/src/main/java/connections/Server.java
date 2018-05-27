@@ -1,6 +1,12 @@
 package connections;
 
+import common.commands.Command;
+import common.commands.serialization.SerializeCommand;
+import common.model.Alert;
+import dao.daos.AlertDAO;
+
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -34,6 +40,13 @@ public class Server extends Thread {
             while (running) {
                 Socket client = serverSocket.accept();
                 System.out.println("New client: " + client.toString());
+/*
+                ObjectOutputStream outputStream = new ObjectOutputStream(client.getOutputStream());
+                List<Alert> alerts = AlertDAO.findAllActive();
+                Command command1 = new SerializeCommand(alerts);
+                String response = (String) command1.execute();
+                outputStream.writeObject(command1.execute());
+*/
                 ServerToClientConnection newConnection = new ServerToClientConnection(client, ++connectedClients);
                 connections.add(newConnection);
                 newConnection.start();

@@ -3,18 +3,28 @@ package sd.proj.peter.infotrafficapp.uicontrollers;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import sd.proj.peter.infotrafficapp.R;
+import sd.proj.peter.infotrafficapp.client.ClientBeta;
 import sd.proj.peter.infotrafficapp.common.commands.serialization.DeserializeCommand;
 import sd.proj.peter.infotrafficapp.common.commands.serialization.SerializeCommand;
 import sd.proj.peter.infotrafficapp.common.model.Alert;
+import sd.proj.peter.infotrafficapp.common.model.AlertList;
 import sd.proj.peter.infotrafficapp.common.model.User;
+import sd.proj.peter.infotrafficapp.uicontrollers.listAdapters.CustomListAdapter;
 
 public class AlertListActivity extends AppCompatActivity {
 
     User currentUser;
+    AlertList alerts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +50,15 @@ public class AlertListActivity extends AppCompatActivity {
             }
         });
 
+        ClientBeta clientBeta = new ClientBeta(this);
+        clientBeta.execute();
+
         //TODO: listView controller
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     private void goToAlertDetails(Alert selectedAlert) {
@@ -64,5 +82,27 @@ public class AlertListActivity extends AppCompatActivity {
     }
 
     private void refreshAlerts() {
+
+        final ListView alertListView = (ListView) findViewById(R.id.list_alert_list);
+
+        if(alerts == null)
+            Log.d("AlertListActivity stuff", "Alert list null!!!");
+        else
+            Log.d("AlertListActivity stuff", "Alert list NOT null");
+
+        alertListView.setAdapter(new CustomListAdapter(this, 0, (alerts.getAlerts())));
+
+        alertListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Object o = alertListView.getItemAtPosition(position);
+                Alert fullObject = (Alert) o;
+                goToAlertDetails(fullObject);
+            }
+        });
+    }
+
+    public void setAlerts(AlertList alerts) {
+        this.alerts = alerts;
     }
 }

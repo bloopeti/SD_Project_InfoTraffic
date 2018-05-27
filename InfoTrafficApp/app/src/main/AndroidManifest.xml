@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -29,7 +30,7 @@
         <activity android:name=".uicontrollers.AlertDetailsActivity" />
         <activity android:name=".uicontrollers.AddAlertActivity" />
         <activity android:name=".uicontrollers.AlertListActivity" />
-        <activity android:name=".uicontrollers.TemporaryActivity"></activity>
+        <activity android:name=".uicontrollers.TemporaryActivity" />
     </application>
 
 </manifest>

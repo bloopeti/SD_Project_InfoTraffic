@@ -14,6 +14,7 @@ import java.io.IOException;
 
 import sd.proj.peter.infotrafficapp.R;
 import sd.proj.peter.infotrafficapp.client.Client;
+import sd.proj.peter.infotrafficapp.client.ClientBeta;
 import sd.proj.peter.infotrafficapp.common.commands.serialization.SerializeCommand;
 import sd.proj.peter.infotrafficapp.common.model.User;
 
@@ -21,14 +22,12 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText EmailFieldLogin;
     private EditText PassFieldLogin;
-    private Client client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // Set up
-
         EmailFieldLogin = (EditText) findViewById(R.id.email_field_login);
         PassFieldLogin = (EditText) findViewById(R.id.pass_field_login);
 
@@ -92,6 +91,8 @@ public class LoginActivity extends AppCompatActivity {
 
             msg = "login\n" + msg;
 
+            if(!((currentUser.getMail().equals("test@test.com")) && (currentUser.getPassword().equals("testy"))))
+                cancel = true;
 
 
             //TODO get response
